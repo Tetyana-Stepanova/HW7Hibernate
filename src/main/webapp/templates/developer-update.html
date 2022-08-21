@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DeveloperUpdate</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-3">
+    <div class="card text-center">
+        <div class="card-header">
+            <h2>Enter ID of developer to update:</h2><br>
+            <div>
+                <form  action="/developer/update" method="post">
+                    <div class="mb-3 row">
+                        <label for="updateId" class="col-sm-2 col-form-label">ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateId" id="updateId">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateFirstName" class="col-sm-2 col-form-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateFirstName" id="updateFirstName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateLastName" class="col-sm-2 col-form-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateLastName" id="updateLastName">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateAge" class="col-sm-2 col-form-label">Age</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateAge" id="updateAge">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateGender" class="col-sm-2 col-form-label">Gender</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateGender" id="updateGender">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateCity" class="col-sm-2 col-form-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateCity" id="updateCity">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateSalary" class="col-sm-2 col-form-label">Salary</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateSalary" id="updateSalary">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateCompanyId" class="col-sm-2 col-form-label">CompanyId</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateCompanyId" id="updateCompanyId">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateSkills" class="col-sm-2 col-form-label">Skills</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateSkills" id="updateSkills">
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="updateProjects" class="col-sm-2 col-form-label">Projects</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" value="" name="updateProjects" id="updateProjects">
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" type="submit">Update</button>
+                    </div>
+                </form>
+                <br>
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-3">
+                            <h4 style="color:#00ff00" th:if="${errorUpdate} == 'true'" th:text="${errorUpdate}"></h4>
+                            <h4 style="color:#ff0000" th:if="${errorUpdate.length()} > 4" th:text="'Error: ' + ${errorUpdate}"></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="/developer" class="btn btn-outline-dark" style="width:400px;"
+                   role="button" data-bs-toggle="button">Back</a></div><br>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
